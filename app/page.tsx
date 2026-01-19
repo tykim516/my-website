@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="flex w-full items-center justify-center bg-[#112129]">
-      <main className="flex w-full min-h-screen flex-col items-center justify-center">
+    <div className="flex h-screen items-center justify-center bg-[#112129] border-double border-[8px] border-[#BC7C5C] box-border">
+      <main className="flex w-full h-screen flex-col items-center justify-center">
         {/* Title */}
         <Image
           src="home-logo.svg"
@@ -19,10 +19,10 @@ export default function Home() {
         </h1>
 
         {/* Cards Container */}
-        <div className="flex mt-[40px] w-full text-[#F0EAD6] pl-[40px] pr-[40px]"
+        <div className="flex mt-[40px] w-full max-w-[1400px] text-[#F0EAD6]"
         style={{ fontFamily: 'Jost' }}>
           {/* Card 1 */}
-          <div className="flex w-full nmin-h-[380px] flex-1 flex-col rounded-lg bg-[#0C1519] ml-[60px] mr-[40px] p-[20px] rounded-[10px]">
+          <div className="flex w-full nmin-h-[380px] flex-1 flex-col rounded-lg bg-[#0C1519] p-[20px] rounded-[10px] ml-[60px] mr-[30px]">
             <h2 className="text-center tracking-wide mt-[5px]">
               Technical Product Manager
             </h2>
@@ -60,7 +60,7 @@ export default function Home() {
           
 
           {/* Card 3 */}
-          <div className="flex min-h-[380px] flex-1 flex-col rounded-lg bg-[#0C1519] ml-[40px] mr-[60px] p-[20px] rounded-[10px]">
+          <div className="flex min-h-[380px] flex-1 flex-col rounded-lg bg-[#0C1519] p-[20px] rounded-[10px] ml-[30px] mr-[60px]">
             <h2 className="mb-1 text-center font-light tracking-wide mt-[5px]">
               Co-Founder
             </h2>
@@ -83,15 +83,15 @@ export default function Home() {
         <div className="flex gap-[30px] mt-[40px]">
           <button 
             aria-label="Slide 1"
-            className="h-[20px] w-[20px] rotate-45 bg-[#F0EAD6] border-[1px] border-[#BC7C5C]" 
+            className="h-[20px] w-[20px] rotate-45 bg-[#F0EAD6] border-[2.5px] border-[#BC7C5C] hover:bg-[#BC7C5C]" 
           />
           <button 
             aria-label="Slide 2"
-            className="h-[20px] w-[20px] rotate-45 bg-[#F0EAD6] border-[1px] border-[#BC7C5C]" 
+            className="h-[20px] w-[20px] rotate-45 bg-[#F0EAD6] border-[2.5px] border-[#BC7C5C]" 
           />
           <button 
             aria-label="Slide 3"
-            className="h-[20px] w-[20px] rotate-45 bg-[#F0EAD6] border-[1px] border-[#BC7C5C]" 
+            className="h-[20px] w-[20px] rotate-45 bg-[#F0EAD6] border-[2.5px] border-[#BC7C5C]" 
           />
         </div>
       </main>
