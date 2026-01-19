@@ -4,11 +4,19 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import localFont from 'next/font/local'
+import { Jost } from 'next/font/google';
+
 
 const willow = localFont({
   src: '../public/fonts/Willow.ttf',
   variable: '--font-willow',
 })
+
+const jost = Jost({
+  subsets: ['latin'], // Specify the necessary subsets
+  display: 'swap',   // Control font loading behavior
+  variable: '--font-jost',
+});
 
 export default function RootLayout({
   children,
@@ -17,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={willow.variable}>
+      <body className={`${willow.variable} ${jost.variable}`}>
         {children}
       </body>
     </html>

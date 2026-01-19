@@ -1,8 +1,16 @@
+import Image from 'next/image';
+
 export default function Home() {
   return (
     <div className="flex w-full items-center justify-center bg-[#112129]">
       <main className="flex w-full min-h-screen flex-col items-center justify-center">
         {/* Title */}
+        <Image
+          src="home-logo.svg"
+          alt="Logo"
+          width={100} // Specify width
+          height={50}
+        />
         <h1 
           className="mb-20 tracking-[0.3em] text-[#BC7C5C] text-[45px]" 
           style={{ fontFamily: 'Willow' }}
@@ -11,17 +19,18 @@ export default function Home() {
         </h1>
 
         {/* Cards Container */}
-        <div className="flex mt-[40px] w-full text-[#F0EAD6] pl-[40px] pr-[40px]">
+        <div className="flex mt-[40px] w-full text-[#F0EAD6] pl-[40px] pr-[40px]"
+        style={{ fontFamily: 'Jost' }}>
           {/* Card 1 */}
           <div className="flex w-full nmin-h-[380px] flex-1 flex-col rounded-lg bg-[#0C1519] ml-[60px] mr-[40px] p-[20px] rounded-[10px]">
-            <h2 className="text-center font-light tracking-wide mt-[5px]">
+            <h2 className="text-center tracking-wide mt-[5px]">
               Technical Product Manager
             </h2>
-            <p className="text-center font-normal tracking-wide mt-[0px]">
+            <p className="text-center font-jost tracking-wide mt-[0px]">
               at Hewlett Packard Enterprise
             </p>
             <div className="h-[2px] w-full bg-[#BC7C5C]"></div>
-            <div className="text-left">
+            <div className="text-left font-jost">
               <p>
                 Analyzed complex system telemetry and configuration data across compute, storage, and network layers to identify performance bottlenecks impacting latency, throughput, and reliability.
                 Led a 12-person product organization and a 100+ member technical cohort, driving execution, product quality, and an entrepreneurial culture that consistently delivered high-impact software for nonprofit partners.

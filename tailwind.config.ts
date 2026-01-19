@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         willow: 'Willow',
+        jost: 'Jost',
       },
     },
   },
