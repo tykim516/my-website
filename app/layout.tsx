@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-
-
 import "./globals.css";
-
 import localFont from 'next/font/local'
 import { Jost } from 'next/font/google';
 
