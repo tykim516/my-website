@@ -11,17 +11,21 @@ export default function Home() {
     [
       {
         title: "Technical Product Manager",
-        company: "at Hewlett Packard Enterprise",
-        description: "Analyzed complex system telemetry and configuration data across compute, storage, and network layers to identify performance bottlenecks impacting latency, throughput, and reliability."
+        subtitle: "at Hewlett Packard Enterprise",
+        description: `
+        ➢ Analyzed complex system telemetry and configuration data across compute, storage, and network layers to identify performance bottlenecks impacting latency, throughput, and reliability. 
+        
+        ➢ Test Test
+        `.trimStart()
       },
       {
         title: "Product Manager",
-        company: "at Hack4Impact",
+        subtitle: "at Hack4Impact",
         description: "Led a 12-person product organization and a 100+ member technical cohort, driving execution, product quality, and an entrepreneurial culture that consistently delivered high-impact software for nonprofit partners."
       },
       {
         title: "Co-Founder",
-        company: "of Devscribe",
+        subtitle: "of Devscribe",
         description: "Designed core data pipelines for an API intelligence platform, transforming raw source code into structured representations for downstream analysis. Built automated workflows to extract, validate, and enrich metadata used in model inference and documentation generation."
       }
     ],
@@ -29,35 +33,35 @@ export default function Home() {
     [
       {
         title: "Product Manager",
-        company: "at Productiv",
+        subtitle: "at Productiv",
         description: "Developed scalable microservices architecture handling millions of daily transactions. Implemented CI/CD pipelines that reduced deployment time by 60%."
       },
       {
         title: "ML Researcher",
-        company: "with Dr. Puneet Aggarwal",
+        subtitle: "with Dr. Puneet Aggarwal",
         description: "Conducted research on machine learning applications in natural language processing. Published findings in peer-reviewed conferences."
       },
       {
         title: "Peer Leader",
-        company: "at the Cal Poly Center for Leadership",
+        subtitle: "at the Cal Poly Center for Leadership",
         description: "Teaching organizational and personal leadership to Cal Poly students through the Center for Leadership, an organization that facilitates events and workshops for students to practice leadership philosophies. Creating and implementing social media marketing strategies through LinkedIn and Instagram." 
       }
     ],
     // Slide 3
     [
       {
-        title: "Data Analyst",
-        company: "at Analytics Firm",
-        description: "Analyzed large-scale datasets to derive actionable business insights. Created dashboards and reports for C-level executives."
+        title: "National Park Service Conservation Corps",
+        subtitle: "at Yellowstone National Park",
+        description: ""
       },
       {
-        title: "Project Coordinator",
-        company: "at Non-Profit Org",
-        description: "Coordinated cross-functional teams to deliver community impact projects. Managed budgets and stakeholder relationships."
+        title: "Predicting MLB At-Bat Outcomes",
+        subtitle: "Personal Project",
+        description: ""
       },
       {
-        title: "Consultant",
-        company: "at Advisory Group",
+        title: "Analyzing PGA Tour Statistics",
+        subtitle: "Personal Project",
         description: "Provided strategic guidance to clients on digital transformation initiatives. Delivered workshops and training programs."
       }
     ]
@@ -90,25 +94,28 @@ export default function Home() {
               <div
                 key={sectionIndex}
                 className="flex min-w-full text-[#F0EAD6]"
-                style={{ fontFamily: 'Jost' }}
+                style={{ fontFamily: 'Jost', fontWeight: 200 }}
               >
               {section.map((card, cardIndex) => (
                 <div
                   key={cardIndex}
                   className="flex min-h-[380px] flex-1 flex-col rounded-[10px] bg-[#0C1519] p-[20px] ml-[30px] mr-[30px]"
                 >
-                  <h2 className="text-center tracking-wide mt-[5px] font-light">
-                      {card.title}
-                    </h2>
-                    <p className="text-center tracking-wide mt-[0px]">
-                      {card.company}
-                    </p>
-                    <div className="h-[2px] w-full bg-[#BC7C5C]"></div>
-                    <div className="text-left">
-                      <p>{card.description}</p>
-                    </div>
+                  <div 
+                    className="text-center tracking-wide mt-[5px]"
+                    style={{ fontFamily: 'Jost', fontWeight: 600 }}
+                  >
+                    {card.title}
                   </div>
-                ))}
+                  <p className="text-center tracking-wide mt-[0px]">
+                    {card.subtitle}
+                  </p>
+                  <div className="h-[2px] w-full bg-[#BC7C5C]"></div>
+                  <div className="text-left">
+                    <p className="whitespace-pre-line">{card.description}</p>
+                  </div>
+                </div>
+              ))}
               </div>
             ))}
           </div>
