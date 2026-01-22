@@ -13,16 +13,34 @@ export default function Home() {
         title: "Technical Product Manager",
         subtitle: "at Hewlett Packard Enterprise",
         description: `
-        ➢ Analyzed complex system telemetry and configuration data across compute, storage, and network layers to identify performance bottlenecks impacting latency, throughput, and reliability. 
+➢ Building marketing material for block, object, and file storage integrations with Ansible and Kubernetes
         
-        ➢ Test Test
-        `.trimStart()
+➢ Improving user experience on the storage product UI and via the API
+
+➢ Developing new systems to improve operational efficiency for software support contract renewals
+
+➢ Designing business SLAs to manage risk while driving consistent revenue through product refreshes 
+
+➢ Establishing object storage product for AI/ML workloads and applications
+`.trimStart()
       },
       {
-        title: "Product Manager",
-        subtitle: "at Hack4Impact",
-        description: "Led a 12-person product organization and a 100+ member technical cohort, driving execution, product quality, and an entrepreneurial culture that consistently delivered high-impact software for nonprofit partners."
-      },
+        title: "Product Manager and Director",
+        subtitle: "at Hack4Impact, Cal Poly Chapter",
+        description: `
+➢ Led a team of 12 PMs, among a 100+ member club, to build tools for local nonprofits
+
+➢ Some of our projects:
+        
+Event and volunteer management portal for the SLO Beaver Brigade
+
+Analytics and visualization dashboard for the Surfrider Foundation
+    
+Marketing and referrals tool for the Paso Robles Food Co Op
+
+Information logging application for the Central Coast Heritage Tree Foundation
+`.trimStart()
+        },
       {
         title: "Co-Founder",
         subtitle: "of Devscribe",
@@ -74,11 +92,11 @@ export default function Home() {
         <Image
           src="home-logo.svg"
           alt="Logo"
-          width={100} // Specify width
-          height={50}
+          width={180} // Specify width
+          height={90}
         />
         <h1 
-          className="mb-20 tracking-[0.3em] text-[#BC7C5C] text-[45px]" 
+          className="mt-[20px] mb-20 tracking-[0.3em] text-[#BC7C5C] text-[45px]" 
           style={{ fontFamily: 'Willow' }}
         >
           EXPERIENCE & PROJECTS
@@ -94,7 +112,7 @@ export default function Home() {
               <div
                 key={sectionIndex}
                 className="flex min-w-full text-[#F0EAD6]"
-                style={{ fontFamily: 'Jost', fontWeight: 200 }}
+                style={{ fontFamily: 'Jost', fontWeight: 300, fontSize: 16 }}
               >
               {section.map((card, cardIndex) => (
                 <div
@@ -103,7 +121,7 @@ export default function Home() {
                 >
                   <div 
                     className="text-center tracking-wide mt-[5px]"
-                    style={{ fontFamily: 'Jost', fontWeight: 600 }}
+                    style={{ fontFamily: 'Jost', fontWeight: 600, fontSize: 20 }}
                   >
                     {card.title}
                   </div>
@@ -112,7 +130,7 @@ export default function Home() {
                   </p>
                   <div className="h-[2px] w-full bg-[#BC7C5C]"></div>
                   <div className="text-left">
-                    <p className="whitespace-pre-line">{card.description}</p>
+                    <p className="whitespace-pre-wrap">{card.description}</p>
                   </div>
                 </div>
               ))}
