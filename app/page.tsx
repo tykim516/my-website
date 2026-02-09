@@ -34,17 +34,23 @@ export default function Home() {
         
 Event and volunteer management portal for the SLO Beaver Brigade
 
-Analytics and visualization dashboard for the Surfrider Foundation
-    
-Marketing and referrals tool for the Paso Robles Food Co Op
+Marketing platform integrations for the Paso Robles Food Co Op
 
-Information logging application for the Central Coast Heritage Tree Foundation
+Analytics and visualization dashboard for the Surfrider Foundation
 `.trimStart()
         },
       {
         title: "Co-Founder",
         subtitle: "of Devscribe",
-        description: "Designed core data pipelines for an API intelligence platform, transforming raw source code into structured representations for downstream analysis. Built automated workflows to extract, validate, and enrich metadata used in model inference and documentation generation."
+        description: `
+➢ Designed the core architecture of an AI-powered API intelligence platform combining static code analysis, data pipelines, and multi-model inference to generate high-fidelity API documentation.
+
+➢ Developed tool-based workflows for API discovery, schema extraction, and OpenAPI generation, leveraging custom parsers, MCP integration, and LLM orchestration.
+
+➢ Built automated workflows to extract, validate, and enrich metadata used in model inference and documentation generation.
+
+➢ Created the developer facing UI and experience to streamline adoption of documentation workflows across different API frameworks.
+`.trimStart()
       }
     ],
     // Slide 2
@@ -52,48 +58,75 @@ Information logging application for the Central Coast Heritage Tree Foundation
       {
         title: "Product Manager",
         subtitle: "at Productiv",
-        description: "Developed scalable microservices architecture handling millions of daily transactions. Implemented CI/CD pipelines that reduced deployment time by 60%."
+        description: `
+➢ Delivered ROI and technical feasibility analysis across 30+ ML and OCR platforms to automate manual workflows, reduce operational overhead, and improve data accuracy at scale.
+
+➢ Launched platform features adopted by 160+ businesses, scaling usage from 500 to 50,000 users and improving engagement.
+
+➢ Developed comprehensive PRDs, roadmaps, user stories, and prototypes, facilitating the successful implementation of key product features and aligning team efforts with product goals.
+`.trimStart()
       },
       {
         title: "ML Researcher",
         subtitle: "with Dr. Puneet Aggarwal",
-        description: "Conducted research on machine learning applications in natural language processing. Published findings in peer-reviewed conferences."
+        description: `
+➢ Engineered end-to-end systems that integrated data storage, model inference, feedback loops, and evaluation metrics to solve long text decision tree and logic problems.
+
+➢ Designed and built a framework to solve complex decision analysis problems through LLM orchestration using LangChain to enhance adacemic resources to improve the learning of engineering students. 
+`.trimStart()
       },
       {
         title: "Peer Leader",
         subtitle: "at the Cal Poly Center for Leadership",
-        description: "Teaching organizational and personal leadership to Cal Poly students through the Center for Leadership, an organization that facilitates events and workshops for students to practice leadership philosophies. Creating and implementing social media marketing strategies through LinkedIn and Instagram." 
+        description: `
+➢ Created marketing strategies and lesson materials for the Center for Leadership, an organization that facilitates events and workshops
+for Cal Poly Students to practice leadership philosophies.
+
+➢ Facilitated organizational and personal leadership development for 100+ Cal Poly students through weekly workshops, enhancing skills in communication and entrepreneurship.
+`.trimStart()
       }
     ],
     // Slide 3
     [
       {
-        title: "National Park Service Conservation Corps",
+        title: "National Park Service",
         subtitle: "at Yellowstone National Park",
-        description: ""
+        description: `
+➢	Worked on trail restoration, erosion control, and maintenance projects throughout Yellowtone National Park.
+
+➢	Collected visitation data from various park regions to optimize resource allocation.
+`.trimStart()
       },
       {
-        title: "Predicting MLB At-Bat Outcomes",
+        title: "Predicting MLB Batting Outcomes",
         subtitle: "Personal Project",
-        description: ""
+        description: `
+➢ Trained various models to accurately predict the outcome of MLB at-bat scenarios using data provided by Baseball Reference.
+
+➢ Achieved and accuracy score of 95% on home run predictions based on park dimensions, pitch type/angle/velocity/location against batter tendenices.
+`.trimStart()
       },
       {
         title: "Analyzing PGA Tour Statistics",
         subtitle: "Personal Project",
-        description: "Provided strategic guidance to clients on digital transformation initiatives. Delivered workshops and training programs."
+        description: `
+➢ Developed and launched a machine learning model to analyze the statistics of 200 players over 5 years.
+
+➢ Determined a combination of PGA player statistics that are highly correlated to future top 10 tournament finishes.
+`.trimStart()
       }
     ]
   ];
 
   return (
-    <div className="flex h-screen items-center justify-center bg-[#112129] border-double border-[8px] border-[#BC7C5C] box-border">
+    <div className="flex h-screen items-center justify-center bg-[#112129] border-double border-[4px] border-[#BC7C5C] box-border">
       <main className="flex w-full h-screen flex-col items-center justify-center">
         {/* Title */}
         <Image
           src="home-logo.svg"
           alt="Logo"
-          width={180} // Specify width
-          height={90}
+          width={140} // Specify width
+          height={70}
         />
         <h1 
           className="mt-[20px] mb-20 tracking-[0.3em] text-[#BC7C5C] text-[45px]" 
@@ -117,7 +150,7 @@ Information logging application for the Central Coast Heritage Tree Foundation
               {section.map((card, cardIndex) => (
                 <div
                   key={cardIndex}
-                  className="flex min-h-[380px] flex-1 flex-col rounded-[10px] bg-[#0C1519] p-[20px] ml-[30px] mr-[30px]"
+                  className="flex min-h-[380px] flex-1 flex-col bg-[#0C1519] p-[20px] ml-[30px] mr-[30px]"
                 >
                   <div 
                     className="text-center tracking-wide mt-[5px]"
@@ -146,7 +179,7 @@ Information logging application for the Central Coast Heritage Tree Foundation
               key={index}
               aria-label={`Slide ${index + 1}`}
               onClick={() => setCurrentSlide(index)}
-              className={`h-[20px] w-[20px] rotate-45 border-[2.5px] border-[#BC7C5C] transition-colors ${
+              className={`h-[20px] w-[20px] rotate-45 border-[2.5px] border-[#BC7C5C] transition-colors cursor-pointer ${
                 currentSlide === index ? 'bg-[#BC7C5C]' : 'bg-[#112129]'
               } hover:bg-[#BC7C5C]`}
             />
