@@ -1,10 +1,30 @@
 "use client"
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [H1fontSize, setH1FontSize] = useState(48); // Default for SSR
+
+  useEffect(() => {
+    const updateFontSize = () => {
+      if (window.innerWidth >= 1024) {
+        setH1FontSize(48);
+      } else if (window.innerWidth >= 768) {
+        setH1FontSize(48);
+      } else {
+        setH1FontSize(24);
+      }
+    };
+
+    // Set initial size
+    updateFontSize();
+
+    // Update on resize
+    window.addEventListener('resize', updateFontSize);
+    return () => window.removeEventListener('resize', updateFontSize);
+  }, []);
 
   const cardSections = [
     // Slide 1
@@ -43,13 +63,11 @@ Analytics and visualization dashboard for the Surfrider Foundation
         title: "Co-Founder",
         subtitle: "of Devscribe",
         description: `
-➢ Designed the core architecture of an AI-powered API intelligence platform combining static code analysis, data pipelines, and multi-model inference to generate high-fidelity API documentation.
+➢ Designed the core architecture of an AI-powered API intelligence platform combining static code analysis, data pipelines, and multi-model orchestration to generate high-fidelity API documentation
 
-➢ Developed tool-based workflows for API discovery, schema extraction, and OpenAPI generation, leveraging custom parsers, MCP integration, and LLM orchestration.
+➢ Built automated workflows to extract, validate, and enrich metadata used in model inference and documentation generation
 
-➢ Built automated workflows to extract, validate, and enrich metadata used in model inference and documentation generation.
-
-➢ Created the developer facing UI and experience to streamline adoption of documentation workflows across different API frameworks.
+➢ Created the developer facing UI and experience to streamline adoption of documentation workflows across different API frameworks
 `.trimStart()
       }
     ],
@@ -59,30 +77,29 @@ Analytics and visualization dashboard for the Surfrider Foundation
         title: "Product Manager",
         subtitle: "at Productiv",
         description: `
-➢ Delivered ROI and technical feasibility analysis across 30+ ML and OCR platforms to automate manual workflows, reduce operational overhead, and improve data accuracy at scale.
+➢ Delivered ROI and technical feasibility analysis across 30+ ML and OCR platforms to automate manual workflows, reduce operational overhead, and improve data accuracy at scale
 
-➢ Launched platform features adopted by 160+ businesses, scaling usage from 500 to 50,000 users and improving engagement.
+➢ Launched platform features adopted by 160+ businesses, scaling usage from 500 to 50,000 users and improving engagement
 
-➢ Developed comprehensive PRDs, roadmaps, user stories, and prototypes, facilitating the successful implementation of key product features and aligning team efforts with product goals.
+➢ Developed comprehensive PRDs, roadmaps, user stories, and prototypes, facilitating the successful implementation of key product features and aligning team efforts with product goals
 `.trimStart()
       },
       {
         title: "ML Researcher",
         subtitle: "with Dr. Puneet Aggarwal",
         description: `
-➢ Engineered end-to-end systems that integrated data storage, model inference, feedback loops, and evaluation metrics to solve long text decision tree and logic problems.
+➢ Engineered end-to-end systems that integrated data storage, model inference, feedback loops, and evaluation metrics to solve long text decision tree and logic problems
 
-➢ Designed and built a framework to solve complex decision analysis problems through LLM orchestration using LangChain to enhance adacemic resources to improve the learning of engineering students. 
+➢ Designed and built a framework to solve complex decision analysis problems through LLM orchestration using LangChain to enhance adacemic resources to improve the learning of engineering students
 `.trimStart()
       },
       {
         title: "Peer Leader",
         subtitle: "at the Cal Poly Center for Leadership",
         description: `
-➢ Created marketing strategies and lesson materials for the Center for Leadership, an organization that facilitates events and workshops
-for Cal Poly Students to practice leadership philosophies.
+➢ Created marketing strategies and lesson materials for the Center for Leadership, an organization that facilitates events and workshops for Cal Poly Students to practice leadership philosophies
 
-➢ Facilitated organizational and personal leadership development for 100+ Cal Poly students through weekly workshops, enhancing skills in communication and entrepreneurship.
+➢ Facilitated organizational and personal leadership development for 100+ Cal Poly students through weekly workshops, enhancing skills in communication and entrepreneurship
 `.trimStart()
       }
     ],
@@ -92,27 +109,27 @@ for Cal Poly Students to practice leadership philosophies.
         title: "National Park Service",
         subtitle: "at Yellowstone National Park",
         description: `
-➢	Worked on trail restoration, erosion control, and maintenance projects throughout Yellowtone National Park.
+➢ Worked on trail restoration, erosion control, and maintenance projects throughout Yellowtone National Park
 
-➢	Collected visitation data from various park regions to optimize resource allocation.
+➢ Collected visitation data from various park regions to optimize resource allocation
 `.trimStart()
       },
       {
         title: "Predicting MLB Batting Outcomes",
         subtitle: "Personal Project",
         description: `
-➢ Trained various models to accurately predict the outcome of MLB at-bat scenarios using data provided by Baseball Reference.
+➢ Trained various models to accurately predict the outcome of MLB at-bat scenarios using data provided by Baseball Reference
 
-➢ Achieved and accuracy score of 95% on home run predictions based on park dimensions, pitch type/angle/velocity/location against batter tendenices.
+➢ Achieved and accuracy score of 95% on home run predictions based on park dimensions, pitch type/angle/velocity/location against batter tendenices
 `.trimStart()
       },
       {
         title: "Analyzing PGA Tour Statistics",
         subtitle: "Personal Project",
         description: `
-➢ Developed and launched a machine learning model to analyze the statistics of 200 players over 5 years.
+➢ Developed and launched a machine learning model to analyze the statistics of 200 players over 5 years
 
-➢ Determined a combination of PGA player statistics that are highly correlated to future top 10 tournament finishes.
+➢ Determined a combination of PGA player statistics that are highly correlated to future top 10 tournament finishes
 `.trimStart()
       }
     ]
@@ -127,10 +144,11 @@ for Cal Poly Students to practice leadership philosophies.
           alt="Logo"
           width={140} // Specify width
           height={70}
+          className="mt-[40px]"
         />
         <h1 
-          className="mt-[20px] mb-20 tracking-[0.3em] text-[#BC7C5C] text-[45px]" 
-          style={{ fontFamily: 'Willow' }}
+          className="mt-[20px] mb-20 tracking-[0.3em] text-[#BC7C5C]" 
+          style={{ fontFamily: 'Willow', fontSize: `${H1fontSize}px` }}
         >
           EXPERIENCE & PROJECTS
         </h1>
@@ -173,7 +191,7 @@ for Cal Poly Students to practice leadership philosophies.
         </div>
 
         {/* Navigation Dots */}
-        <div className="flex gap-[30px] mt-[40px]">
+        <div className="flex gap-[30px] mt-[40px] mb-[60px]">
           {[0,1,2].map((index) => (
             <button
               key={index}
